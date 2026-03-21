@@ -1,0 +1,7 @@
+aid: eli-lilly
+url: https://raw.githubusercontent.com/api-evangelist/eli-lilly/refs/heads/main/apis.yml
+modified: '2026-03-21'
+apis: []
+common:
+  - type: Website
+    url: https://www.eli-lilly.com
