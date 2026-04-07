@@ -1,7 +1,12 @@
 aid: eli-lilly
-url: https://raw.githubusercontent.com/api-evangelist/eli-lilly/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/eli-lilly/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis: []
 common:
   - type: Website
     url: https://www.eli-lilly.com
+description: >-
+  Eli Lilly is a global pharmaceutical company that discovers, develops, manufactures,
+  and sells human pharmaceutical products in areas such as diabetes, oncology, immunology,
+  and neuroscience.
