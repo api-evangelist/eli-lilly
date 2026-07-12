@@ -14,12 +14,16 @@ tags:
   - Life Sciences
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/eli-lilly-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/EliLillyCo
   - type: LinkedIn
     url: https://www.linkedin.com/company/eli-lilly-and-company
   - type: Website
     url: https://www.lilly.com
+  - type: Blog
+    url: https://www.lilly.com/news/stories
 description: >-
   Eli Lilly and Company is a Fortune 500 global pharmaceutical company that
   discovers, develops, manufactures, and sells human pharmaceutical products in
