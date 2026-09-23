@@ -1,7 +1,9 @@
 ---
 title: Lilly TuneLab™ X revvity signals
 url: https://www.instagram.com/p/DVRUXlblBrz/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Eli Lilly" press release artificial intelligence'
 position: 4
 source: serpapi-google
