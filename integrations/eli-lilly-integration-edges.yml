@@ -53,6 +53,66 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-cell-gene-therapy.py
   first_seen: '2026-10-20'
+- partner_name: FDA establishment registration and device listing (IVD / surgical specialties)
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRL/rl.cfm
+  category: FDA-registered device establishment
+  contract_reference:
+    register: openFDA device/registrationlisting (owner/operator, device listings by medical specialty)
+    standard: FDA establishment registration and device listing (21 CFR 807)
+    spec_file: null
+    role: fda-registered-owner-operator
+    registered_name: ELI LILLY AND CO.
+    matched_domain: lilly.com
+    matched_by: domain
+    detected_by: sweep-ivd-diagnostics.py
+    detected: '2026-10-21'
+    listed_specialties:
+    - Immunology
+    signal_note: 'REGULATED through the establishment registration: a registration is not a clearance, so no certified_products;
+      specialties are context, never counted'
+    identity: wikidata Q632240 'Eli Lilly and Company' P856 https://www.lilly.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  detected_by: sweep-ivd-diagnostics.py
+  first_seen: '2026-10-21'
+- partner_name: FDA CLIA test categorizations
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfClia/search.cfm
+  category: CLIA-categorized test system maker
+  contract_reference:
+    register: FDA CLIA test categorization database (clia_detail.zip)
+    standard: FDA CLIA categorization
+    spec_file: null
+    role: clia-categorized-test-system-maker
+    registered_name: Eli Lilly and Company
+    matched_domain: lilly.com
+    matched_by: domain
+    detected_by: sweep-ivd-diagnostics.py
+    detected: '2026-10-21'
+    register_id: CR200437
+    certified_products:
+    - product: FDA CLIA categorization, waived complexity
+      product_type: waived
+      lapsed: false
+      latest_effective: 2020/10/05
+      test_systems_sample:
+      - Eli Lilly and Company, tempo Blood Glucose Monitoring System
+    signal_note: 'certified_products = one entry per CLIA COMPLEXITY held (waived / moderate / high), never per
+      test system; the database lists categorizations, not withdrawals: lapsed false'
+    identity: wikidata Q632240 'Eli Lilly and Company' P856 https://www.lilly.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  detected_by: sweep-ivd-diagnostics.py
+  first_seen: '2026-10-21'
 generated: '2026-10-20'
 method: searched
 source:
@@ -65,3 +125,9 @@ checked:
 - https://members.alliancerm.org/Online/Directory/Member-Directory.aspx?WebsiteKey=0a8f86de-1bef-4044-be59-e2f7f1c52e39
 - https://www.ema.europa.eu/en/documents/report/medicines-output-medicines-report_en.xlsx
 - https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/approved-cellular-and-gene-therapy-products
+- https://api.fda.gov/device/510k.json
+- https://api.fda.gov/device/pma.json
+- https://api.fda.gov/device/registrationlisting.json
+- https://ec.europa.eu/tools/eudamed/api/
+- https://www.accessdata.fda.gov/premarket/ftparea/clia_detail.zip
+- https://www.advamed.org/advameddx/members/
