@@ -255,6 +255,100 @@ edges:
     detected: '2026-10-22'
   detected_by: sweep-ga4gh-genomics-standards.py
   first_seen: '2026-10-22'
+- partner_name: EMA (EU centrally authorised medicines)
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.ema.europa.eu/en/medicines/human/EPAR/taltz
+  category: EU centrally authorised medicine
+  contract_reference:
+    register: EMA medicines report (centrally authorised medicines; CHMP / CVMP opinion, EC decision)
+    standard: EU centralised marketing authorisation (Regulation (EC) 726/2004)
+    role: eu-marketing-authorisation-holder
+    categories:
+    - Human
+    - Veterinary
+    statuses:
+    - Authorised
+    - Expired
+    - Withdrawn
+    spec_file: null
+    registered_name: Eli Lilly and Company (Ireland) Limited
+    matched_domain: lilly.com
+    matched_by: domain
+    current_authorisation: true
+    signal_note: certified_products = one entry per product TYPE, never per product, only from products granted
+      an MA; lapsed when every granted product of the type is withdrawn / expired / revoked / lapsed. Advanced-therapy
+      rows are read by cell-gene-therapy and not repeated here. Products are context, never counted
+    detected_by: sweep-eu-ema-medicines.py
+    detected: '2026-10-22'
+    certified_products:
+    - product: human medicine (other) (EU centralised marketing authorisation)
+      product_type: human medicine (other)
+      standard: EU centralised marketing authorisation (Regulation (EC) 726/2004)
+      lapsed: false
+      products_sample:
+      - Liprolog (insulin lispro)
+      - Olansek (olanzapine)
+      - Taltz (ixekizumab)
+    - product: veterinary medicine (EU centralised marketing authorisation)
+      product_type: veterinary medicine
+      standard: EU centralised veterinary marketing authorisation (Regulation (EU) 2019/6)
+      lapsed: true
+      products_sample:
+      - Meloxivet (meloxicam)
+      - Recuvyra (fentanyl)
+      - Trifexis (spinosad;milbemycin oxime)
+    identity: wikidata Q632240 'Eli Lilly and Company' P856 https://www.lilly.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    other_registrations:
+    - Eli Lilly  Co. Ltd.
+    - Eli Lilly and Company Limited
+  detected_by: sweep-eu-ema-medicines.py
+  first_seen: '2026-10-22'
+- partner_name: Health Canada (Medical Device Licence)
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://health-products.canada.ca/api/medical-devices/company/?id=103537&lang=en&type=json
+  category: Canadian medical device licence
+  contract_reference:
+    register: Health Canada Medical Devices Active Licence Listing (MDALL) public API (health-products.canada.ca/api/medical-devices)
+    standard: Canada Medical Devices Regulations (SOR/98-282), Medical Device Licence
+    spec_file: null
+    role: licence-holder
+    registered_name: ELI LILLY AND COMPANY
+    register_country: US
+    register_id: https://health-products.canada.ca/api/medical-devices/company/?id=103537&lang=en&type=json
+    company_status: A
+    matched_domain: lilly.com
+    matched_by: domain
+    certified_products:
+    - product: Health Canada Medical Device Licence, Class II
+      product_type: Class II
+      risk_class: 2
+      lapsed: false
+      first_issued: '1999-07-13'
+      conditional: false
+      licences_sample:
+      - HUMAPEN LUXURA INSULIN PEN INJECTOR
+      - HUMAPEN SAVVIO
+      - HUMATROPEN
+    signal_note: certified_products = one entry per device RISK CLASS licensed by Health Canada, lapsed when no
+      licence of that class is still issued (status I / D, no end date); licence names are a sample, licence and
+      device counts are context, never counted
+    detected_by: sweep-canada-medical-device-licensing.py
+    detected: '2026-10-22'
+    identity: wikidata Q632240 'Eli Lilly and Company' P856 https://www.lilly.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  detected_by: sweep-canada-medical-device-licensing.py
+  first_seen: '2026-10-22'
 generated: '2026-10-20'
 method: searched
 source:
@@ -279,3 +373,8 @@ checked:
 - https://www.ga4gh.org/community/organizational-members/
 - https://www.ga4gh.org/our-products/
 - https://www.ga4gh.org/our-products/implementations/
+- https://spor.ema.europa.eu/omswi/
+- https://www.ema.europa.eu/en/human-regulatory-overview/research-development/data-medicines-iso-idmp-standards-overview
+- https://www.ema.europa.eu/en/medicines/download-medicine-data
+- https://health-products.canada.ca/api/medical-devices/company/?lang=en&type=json
+- https://health-products.canada.ca/api/medical-devices/licence/?lang=en&type=json
